@@ -1,54 +1,58 @@
 import styled from "styled-components";
 
-export const Card = styled.article`
-  background: #fff;
-  border: 1px solid #e5e5e5; /* igual ao Figma */
-  border-radius: 8px;
+export const Card = styled.div`
+  background: #ffffff;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* sombra leve do Figma */
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
 
   img {
     width: 100%;
-    height: 180px;
+    height: 200px; /* igual Figma */
     object-fit: cover;
-  }
-
-  .button {
-    margin: 16px;
-    background: ${({ theme }) => theme.colors.primary};
-    color: #fff;
-    padding: 10px 14px;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 14px;
-    display: block;
   }
 `;
 
 export const Info = styled.div`
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  padding: 20px;
 
-  strong {
-    font-size: 18px;
-    display: block;
-    margin-bottom: 4px;
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #4b4b4b; /* Figma */
   }
 
-  span {
-    color: #777;
+  .details {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #6b6b6b;
     font-size: 14px;
+    margin-bottom: 20px;
   }
 
-  small {
-    color: #999;
-    font-size: 12px;
-    text-align: right;
+  .button {
     display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    background: #e66767; /* vermelho oficial do Figma */
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #cc5858; /* hover igual */
+    }
   }
 `;

@@ -7,17 +7,18 @@ export default function RestaurantCard({ item }) {
       <img src={item.cover} alt={item.name} />
 
       <S.Info>
-        <div>
-          <strong>{item.name}</strong>
-          <span>{item.category} • ⭐ {item.rating}</span>
+        <h3>{item.title}</h3>
+
+        <div className="details">
+          <span>{item.category}</span>
+          <span>•</span>
+          <span>⭐ {item.rating}</span>
         </div>
 
-        <small>{item.fee} • {item.time}</small>
+        <Link to={`/restaurant/${item.id}`} className="button">
+          Ver detalhes
+        </Link>
       </S.Info>
-
-      <Link to={`/restaurant/${item.id}`} className="button">
-        Ver detalhes
-      </Link>
     </S.Card>
   );
 }
