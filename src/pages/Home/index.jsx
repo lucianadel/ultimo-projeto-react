@@ -15,6 +15,7 @@ export default function Home() {
       <S.Section>
         <div className="container">
           <h2>Restaurantes</h2>
+
           <S.Grid>
             {restaurants.map((r) => (
               <RestaurantCard key={r.id} item={r} />

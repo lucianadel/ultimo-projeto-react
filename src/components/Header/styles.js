@@ -1,20 +1,24 @@
+
 import styled from "styled-components";
 
-export const Wrapper = styled.header`
-  background: ${({ theme }) => theme.colors.white};
-  border-bottom: 1px solid #eee;
-  padding: 20px 0;
+export const Header = styled.header`
+  background: #fff;
+  height: 64px; /* altura igual ao Figma */
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  align-items: center;
 
   .container {
     max-width: var(--container);
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 24px; /* igual ao Figma (margem padrão lateral) */
+  }
+
+  .logo {
+    height: 32px; /* tamanho exato do Figma */
+    display: block;
   }
 `;
 
-export const Brand = styled.h1`
-  font-size: 28px;
-  font-weight: 800;
-  color: ${({ theme }) => theme.colors.primary};
-`;
+
 

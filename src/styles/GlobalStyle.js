@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   img{ max-width: 100%; display: block; }
 
   :root{
-    --container: 1200px;
+    --container: 1024px;
   }
 `
 export default GlobalStyle
