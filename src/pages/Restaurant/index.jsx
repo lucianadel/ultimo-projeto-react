@@ -6,7 +6,9 @@ export default function Restaurant() {
   const { id } = useParams();
   const restaurant = restaurants.find((r) => r.id === Number(id));
 
-  if (!restaurant) return <h2>Restaurante não encontrado</h2>;
+  if (!restaurant) {
+    return <h2 style={{ padding: "40px" }}>Restaurante não encontrado</h2>;
+  }
 
   return (
     <>
@@ -25,13 +27,15 @@ export default function Restaurant() {
             {restaurant.menu.map((dish) => (
               <S.DishCard key={dish.id}>
                 <img src={dish.img} alt={dish.name} />
+
                 <h3>{dish.name}</h3>
+
                 <p>{dish.desc}</p>
+
                 <span>{dish.price}</span>
               </S.DishCard>
             ))}
           </S.Grid>
-
         </div>
       </S.Section>
     </>

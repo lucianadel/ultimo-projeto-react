@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
 export const Banner = styled.header`
-  background: url(${(props) => props.bg}) center/cover no-repeat;
-  padding: 80px 0;
+  background: url(${(props) => props.bg}) center center / cover no-repeat;
+  height: 280px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 40px;
   color: #fff;
-  text-shadow: 0 3px 10px rgba(0,0,0,.4);
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
 
   .container {
     max-width: var(--container);
@@ -13,18 +16,18 @@ export const Banner = styled.header`
   }
 
   h1 {
-    font-size: 42px;
-    margin-bottom: 6px;
+    font-size: 40px;
+    margin-bottom: 4px;
   }
 
   p {
-    font-size: 20px;
+    font-size: 18px;
     opacity: 0.9;
   }
 `;
 
 export const Section = styled.section`
-  padding: 40px 0;
+  padding: 48px 0;
 
   .container {
     max-width: var(--container);
@@ -33,44 +36,55 @@ export const Section = styled.section`
   }
 
   h2 {
-    margin-bottom: 20px;
+    font-size: 24px;
+    margin-bottom: 32px;
   }
 `;
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(3, 1fr); /* 3 por linha igual ao Figma */
+  gap: 24px;
 `;
 
 export const DishCard = styled.div`
   background: #fff;
-  border-radius: 16px;
-  box-shadow: ${({ theme }) => theme.shadow};
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
   padding: 16px;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
   img {
     width: 100%;
     height: 160px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 6px;
     margin-bottom: 12px;
   }
 
   h3 {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 6px;
   }
 
   p {
-    margin: 6px 0 10px;
+    font-size: 14px;
     color: #666;
+    margin-bottom: 12px;
+    line-height: 1.4;
+
+    /* limita a 3 linhas */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   span {
     font-size: 18px;
     color: ${({ theme }) => theme.colors.primary};
     font-weight: bold;
+    margin-top: auto;
   }
 `;
